@@ -15,7 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateLabel()
+        saveBasicTypes()
+    }
+    
+    func updateLabel() {
         db.child("firstData").observeSingleEvent(of: .value) { snapshot in
             print("--> \(snapshot)")
             
@@ -28,3 +32,9 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController {
+    func saveBasicTypes() {
+        // Firebase child ("key").setValue(Value)
+        // - string, number, dictionary, array
+    }
+}
